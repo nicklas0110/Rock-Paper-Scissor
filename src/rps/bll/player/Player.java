@@ -83,19 +83,19 @@ public class Player implements IPlayer {
             switch (playerMove)
             {
                 case "Rock":
-                    rock+=2;
-                    paper+=3;
-                    scissor+=1;
-                    break;
-                case "Paper":
                     rock+=1;
                     paper+=2;
-                    scissor+=3;
+                    scissor+=0;
                     break;
-                case "Scissor":
-                    rock+=3;
+                case "Paper":
+                    rock+=0;
                     paper+=1;
                     scissor+=2;
+                    break;
+                case "Scissor":
+                    rock+=2;
+                    paper+=0;
+                    scissor+=1;
                     break;
             }
         }
