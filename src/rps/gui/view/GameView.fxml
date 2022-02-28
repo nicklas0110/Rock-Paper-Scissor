@@ -39,7 +39,11 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="165.0" prefWidth="198.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VS" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/versus.png" />
+                     </image>
+                  </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
