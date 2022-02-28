@@ -7,6 +7,7 @@ import rps.bll.game.Result;
 
 //Java imports
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Example implementation of a player.
@@ -49,7 +50,69 @@ public class Player implements IPlayer {
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
 
+
         //Implement better AI here...
-        return Move.Rock;
+        int play = weightedRandomPlay(results);
+
+        switch (play)
+        {
+            case 1: return Move.Rock;
+            case 2: return Move.Paper;
+            case 3: return Move.Scissor;
+            default: return Move.Rock;
+        }
+    }
+
+    private int weightedRandomPlay(ArrayList<Result> results)
+    {
+        int rock = 1;
+        int paper = 1;
+        int scissor = 1;
+
+        for (Result r:results)
+        {
+            String playerMove;
+            if (r.getWinnerPlayer().getPlayerName() != getPlayerName())
+            {
+                playerMove = r.getWinnerMove().name();
+            }
+            else
+            {
+                playerMove = r.getLoserMove().name();
+            }
+            switch (playerMove)
+            {
+                case "Rock":
+                    rock+=1;
+                    paper+=2;
+                    scissor+=0;
+                    break;
+                case "Paper":
+                    rock+=0;
+                    paper+=1;
+                    scissor+=2;
+                    break;
+                case "Scissor":
+                    rock+=2;
+                    paper+=0;
+                    scissor+=1;
+                    break;
+            }
+        }
+
+        Random random = new Random();
+        int i = random.nextInt(rock+paper+scissor);
+        if (i < rock)
+        {
+            return 1;
+        }
+        else if (i < rock+paper)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
     }
 }
