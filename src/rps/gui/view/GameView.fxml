@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -66,11 +67,20 @@
                <effect>
                   <DropShadow />
                </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#paper" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#paper" opacity="0.75" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/paper.png" />
                </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#scissor" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -79,6 +89,9 @@
                <effect>
                   <DropShadow />
                </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children></HBox>
       <Text layoutX="322.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate" />
