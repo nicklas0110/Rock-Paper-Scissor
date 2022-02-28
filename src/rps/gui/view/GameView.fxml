@@ -1,16 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+<AnchorPane prefHeight="529.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <Label layoutX="86.0" layoutY="190.0" text="Now you can start to build the GUI and implement an awesome game">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+      <HBox layoutX="50.0" layoutY="14.0" prefHeight="49.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="258.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="230.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Round:" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="229.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bot" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="21.0" layoutY="94.0" prefHeight="195.0" prefWidth="646.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="165.0" prefWidth="198.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VS" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Text layoutX="334.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STATE" />
+      <HBox layoutY="334.0" prefHeight="195.0" prefWidth="694.0" />
    </children>
 </AnchorPane>
