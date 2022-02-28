@@ -37,15 +37,13 @@ public class GameViewController implements Initializable {
 
     public void paper(MouseEvent mouseEvent) throws FileNotFoundException {
         //Move.Paper;
-
-        Image paperIMG = new Image("Image/paper.png");
-        human.setImage(paperIMG);
+        Image imgPaper = new Image(getClass().getResourceAsStream("src/rps/gui/view/Image/paper.png"));
+        human.setImage(imgPaper);
     }
 
     public void rock(MouseEvent mouseEvent) {
         //Move.Rock;
-
-        Image rockIMG = new Image("src/rps/gui/view/Image/rock.png");
+        Image rockIMG = new Image("src/rps/gui/Image/rock.png");
         human.setImage(rockIMG);
     }
 
