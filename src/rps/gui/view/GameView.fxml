@@ -33,9 +33,9 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="human" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Image/human.png" />
+                        <Image url="@Image/human.png" />
                      </image></ImageView>
                </children>
             </HBox>
@@ -43,16 +43,16 @@
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Image/versus.png" />
+                        <Image url="@Image/versus.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="robot" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Image/robot.png" />
+                        <Image url="@Image/robot.png" />
                      </image></ImageView>
                </children>
             </HBox>
@@ -62,7 +62,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#rock" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/rock.png" />
+                  <Image url="@Image/rock.png" />
                </image>
                <effect>
                   <DropShadow />
@@ -73,7 +73,7 @@
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#paper" opacity="0.75" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/paper.png" />
+                  <Image url="@Image/paper.png" />
                </image>
                <effect>
                   <DropShadow />
@@ -84,7 +84,7 @@
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#scissor" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/scissor.png" />
+                  <Image url="@Image/scissor.png" />
                </image>
                <effect>
                   <DropShadow />
