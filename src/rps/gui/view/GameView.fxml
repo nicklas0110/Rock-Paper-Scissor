@@ -51,17 +51,17 @@
       <Text layoutX="334.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STATE" />
       <HBox layoutX="125.0" layoutY="327.0" prefHeight="195.0" prefWidth="450.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#rock" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/rock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#paper" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/paper.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#scissor" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/scissor.png" />
                </image>
