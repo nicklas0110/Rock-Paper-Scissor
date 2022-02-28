@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,7 +9,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <HBox layoutX="50.0" layoutY="14.0" prefHeight="50.0" prefWidth="600.0">
+      <HBox layoutX="50.0" layoutY="14.0" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #F0F7FF;">
          <children>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
@@ -62,6 +63,9 @@
                <image>
                   <Image url="@../Image/rock.png" />
                </image>
+               <effect>
+                  <DropShadow />
+               </effect>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#paper" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -72,6 +76,9 @@
                <image>
                   <Image url="@../Image/scissor.png" />
                </image>
+               <effect>
+                  <DropShadow />
+               </effect>
             </ImageView>
          </children></HBox>
       <Text layoutX="322.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate" />
