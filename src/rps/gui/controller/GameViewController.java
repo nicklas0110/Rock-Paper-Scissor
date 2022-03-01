@@ -89,7 +89,6 @@ public class GameViewController implements Initializable {
      * Starts the game
      */
     public void startGame() {
-        ;
 
         IPlayer human = new Player(playerName(), PlayerType.Human);
         IPlayer bot = new Player(aiName.getText(), PlayerType.AI);

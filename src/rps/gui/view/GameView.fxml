@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+<AnchorPane prefHeight="645.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <HBox layoutX="50.0" layoutY="14.0" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #F0F7FF;">
+      <HBox layoutX="98.0" prefHeight="50.0" prefWidth="730.0" style="-fx-background-color: #F0F7FF;">
          <children>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="249.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="113.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="round" strokeType="OUTSIDE" strokeWidth="0.0" text="Round:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Text>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="round" strokeType="OUTSIDE" strokeWidth="0.0" text="Round:" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
-               <children>
-                  <Text fx:id="aiName" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot" />
+                  <Text fx:id="aiName" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Text>
                </children>
             </HBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="27.0" layoutY="93.0" prefHeight="195.0" prefWidth="646.0">
+      <HBox alignment="CENTER" layoutY="140.0" prefHeight="195.0" prefWidth="902.0" style="-fx-background-color: #FEF9EC;">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -57,44 +68,54 @@
                </children>
             </HBox>
          </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
       </HBox>
-      <HBox layoutX="125.0" layoutY="326.0" prefHeight="150.0" prefWidth="450.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#rock" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/rock.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#paper" opacity="0.75" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/paper.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#scissor" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/scissor.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-         </children></HBox>
-      <Text fx:id="gamestate" layoutX="322.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate" />
-      <Text layoutX="305.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick your choice!" />
+      <Text fx:id="gamestate" fill="#00afff" layoutX="401.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="377.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick your choice!">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="577.0" layoutY="426.0" onMouseClicked="#scissor" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/scissor.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="308.0" layoutX="183.0" layoutY="426.0" onMouseClicked="#rock" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/rock.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="376.0" layoutY="426.0" onMouseClicked="#paper" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/paper.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
