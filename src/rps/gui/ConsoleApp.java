@@ -55,7 +55,7 @@ public class ConsoleApp {
      * Famous robots...
      * @return
      */
-    private String getRandomBotName() {
+    public String getRandomBotName() {
         String[] botNames = new String[] {
                 "R2D2",
                 "Mr. Data",

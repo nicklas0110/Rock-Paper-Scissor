@@ -24,7 +24,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bot" />
+                  <Text fx:id="aiName" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot" />
                </children>
             </HBox>
          </children>

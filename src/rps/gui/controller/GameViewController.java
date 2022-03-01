@@ -6,7 +6,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import rps.bll.game.Move;
+import rps.gui.ConsoleApp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,19 +20,21 @@ import java.util.ResourceBundle;
  * @author smsj
  */
 public class GameViewController implements Initializable {
-
+    @FXML
+    public Text aiName;
     @FXML
     private ImageView human;
     @FXML
     private ImageView robot;
+
+    ConsoleApp consoleApp = new ConsoleApp();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-
+        aiName.setText(consoleApp.getRandomBotName());
         // TODO
     }
 
