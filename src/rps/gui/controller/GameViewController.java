@@ -35,7 +35,7 @@ public class GameViewController implements Initializable {
     }
 
     public void paper(MouseEvent mouseEvent) {
-        Move(paper());
+        //Move(paper());
         //Move.Paper;
         String paperIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\paper.png";
         Image paperIMG = new Image(paperIMGFilePath);
