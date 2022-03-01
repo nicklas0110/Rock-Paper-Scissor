@@ -1,6 +1,7 @@
 package rps.gui.controller;
 
 // Java imports
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -30,7 +31,6 @@ import java.util.Scanner;
 import static java.lang.Integer.valueOf;
 
 /**
- *
  * @author smsj
  */
 public class GameViewController implements Initializable {
@@ -85,15 +85,14 @@ public class GameViewController implements Initializable {
     }
 
 
-
-
     /**
      * Starts the game
      */
-    public void startGame() {;
+    public void startGame() {
+        ;
 
         IPlayer human = new Player(playerName(), PlayerType.Human);
-        IPlayer bot = new Player(getRandomBotName(), PlayerType.AI);
+        IPlayer bot = new Player(aiName.getText(), PlayerType.AI);
 
         GameManager ge = new GameManager(human, bot);
 
@@ -121,10 +120,11 @@ public class GameViewController implements Initializable {
 
     /**
      * Famous robots...
+     *
      * @return
      */
     private String getRandomBotName() {
-        String[] botNames = new String[] {
+        String[] botNames = new String[]{
                 "R2D2",
                 "Mr. Data",
                 "3PO",
@@ -140,8 +140,6 @@ public class GameViewController implements Initializable {
 
 
     /**
-     *
-     *
      * @return Rock, Paper or Scissor as String
      */
     public String getPlayerMove() {
@@ -160,17 +158,16 @@ public class GameViewController implements Initializable {
 
         return
                 result.getWinnerPlayer().getPlayerName() +
-                " (" + result.getWinnerMove() + ") " +
-                statusText + result.getLoserPlayer().getPlayerName() +
-                " (" + result.getLoserMove() + ")!";
+                        " (" + result.getWinnerMove() + ") " +
+                        statusText + result.getLoserPlayer().getPlayerName() +
+                        " (" + result.getLoserMove() + ")!";
     }
+
     public String getRoundAsString(Result result) {
         String statusText = result.getType() == ResultType.Win ? "wins over " : "ties ";
 
         return "Round #" + result.getRoundNumber() + ":";
     }
-
-
 
 
 }
