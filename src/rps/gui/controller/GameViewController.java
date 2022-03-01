@@ -132,7 +132,15 @@ public class GameViewController implements Initializable {
                 "Marvin the Paranoid Android",
                 "Bishop",
                 "Robot B-9",
-                "HAL"
+                "HAL",
+                "B-1 Battle Droid",
+                "Wall-E",
+                "T-800",
+                "Agent Smith",
+                "Cortana",
+                "AWESOM-O",
+                "Optimus Prime"
+
         };
         int randomNumber = new Random().nextInt(botNames.length - 1);
         return botNames[randomNumber];
