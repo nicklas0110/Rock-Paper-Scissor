@@ -13,6 +13,7 @@ import rps.gui.controller.GameViewController;
 public class Main {
 
 
+
     /**
      * Main start
      * @param args
@@ -32,7 +33,7 @@ public class Main {
      */
     private static void startRPSJavaFXGame() {
         JavaFXApp.launch();
-        new GameViewController().startGame();
+
     }
     /**
      * Start a console version of the game

@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -21,9 +22,14 @@ public class JavaFXApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        Image icon = new Image(getClass().getResourceAsStream("/rps/gui/view/Image/icon.png"));
+        stage.getIcons().add(icon);
+
         Parent root = FXMLLoader.load(getClass().getResource("/rps/gui/view/EnterName.fxml"));
         stage.setTitle("Rock-Paper-Scissor");
         stage.setScene(new Scene(root));
         stage.show();
+
+
     }
 }

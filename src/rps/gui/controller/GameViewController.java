@@ -2,6 +2,7 @@ package rps.gui.controller;
 
 // Java imports
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -21,6 +22,8 @@ import rps.bll.player.Player;
 import rps.bll.player.PlayerType;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -34,60 +37,63 @@ public class GameViewController implements Initializable {
     @FXML
     public Text aiName;
     @FXML
-    private ImageView human;
+    private ImageView humanImg;
     @FXML
-    private ImageView robot;
+    private ImageView robotImg;
     @FXML
     private Text round;
     @FXML
     private Text gamestate;
     @FXML
-    private Text player;
+    private Text playerTxt;
 
     public String playerMove = "";
 
+    private IPlayer human;
+    private IPlayer bot;
 
-    ConsoleApp consoleApp = new ConsoleApp();
+    private GameManager ge;
+
+    private String paperIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\paper.png";
+    private String rockIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\rock.png";
+    private String scissorIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\scissor.png";
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        aiName.setText(consoleApp.getRandomBotName());
+        aiName.setText(getRandomBotName());
+        playerTxt.setText(playerName());
 
+        human = new Player(playerName(), PlayerType.Human);
+        bot = new Player(aiName.getText(), PlayerType.AI);
 
-        if (playerName() == ""); { player.setText("Player 1"); }
-        if (playerName() != ""); { player.setText(playerName()); }
-
-
+        ge = new GameManager(human, bot);
     }
 
-    public void paper(MouseEvent mouseEvent) {
+    public void paper(ActionEvent actionEvent) {
         playerMove = "Paper";
-        startGame();
+        playRound();
 
-        String paperIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\paper.png";
         Image paperIMG = new Image(paperIMGFilePath);
-        human.setImage(paperIMG);
+        humanImg.setImage(paperIMG);
     }
 
-    public void rock(MouseEvent mouseEvent) {
+    public void rock(ActionEvent actionEvent) {
         playerMove = "Rock";
-        startGame();
+        playRound();
 
-        String rockIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\rock.png";
         Image rockIMG = new Image(rockIMGFilePath);
-        human.setImage(rockIMG);
+        humanImg.setImage(rockIMG);
     }
 
-    public void scissor(MouseEvent mouseEvent) {
+    public void scissor(ActionEvent actionEvent) {
         playerMove = "Scissor";
-        startGame();
+        playRound();
 
-        String scissorIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\scissor.png";
         Image scissorIMG = new Image(scissorIMGFilePath);
-        human.setImage(scissorIMG);
+        humanImg.setImage(scissorIMG);
     }
 
 
@@ -95,30 +101,26 @@ public class GameViewController implements Initializable {
      * Starts the game
      */
 
-    public void startGame() {
+    public void playRound() {
+        String playerMove = getPlayerMove();
+        ge.playRound(Move.valueOf(playerMove));
 
-        IPlayer human = new Player(playerName(), PlayerType.Human);
-        IPlayer bot = new Player(aiName.getText(), PlayerType.AI);
+        ArrayList<Result> results = new ArrayList<>(ge.getGameState().getHistoricResults());
+        Result result = results.get(results.size() - 1);
 
-        GameManager ge = new GameManager(human, bot);
+        gamestate.setText(getResultAsString(result));
+        round.setText(getRoundAsString(result));
+        gamestate.setX(-60);
 
+        Move robotMove = result.getWinnerPlayer().getPlayerType() == PlayerType.AI ? result.getWinnerMove() : result.getLoserMove();
 
+        switch(robotMove) {
+            case Rock -> robotImg.setImage(new Image(rockIMGFilePath));
+            case Paper -> robotImg.setImage(new Image(paperIMGFilePath));
+            case Scissor -> robotImg.setImage(new Image(scissorIMGFilePath));
+        }
 
-            String playerMove = getPlayerMove();
-
-            ge.playRound(Move.valueOf(playerMove));
-            System.out.println(ge.playRound(Move.valueOf(playerMove)));
-
-            ge.getGameState().getHistoricResults().forEach((result) -> {
-                gamestate.setText(getResultAsString(result));
-                System.out.println(getResultAsString(result));
-                gamestate.setX(-60);
-
-                round.setText(getRoundAsString(result));
-
-            });
-
-
+        System.out.println(getResultAsString(result));
     }
 
 
@@ -175,10 +177,8 @@ public class GameViewController implements Initializable {
         String statusText = result.getType() == ResultType.Win ? "wins over " : "ties ";
 
         return
-                result.getWinnerPlayer().getPlayerName() +
-                        " (" + result.getWinnerMove() + ") " +
-                        statusText + result.getLoserPlayer().getPlayerName() +
-                        " (" + result.getLoserMove() + ")!";
+            result.getWinnerPlayer().getPlayerName() + " " +
+            statusText + result.getLoserPlayer().getPlayerName();
     }
 
     public String getRoundAsString(Result result) {

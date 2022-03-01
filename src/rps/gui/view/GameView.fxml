@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="645.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <HBox layoutX="98.0" prefHeight="50.0" prefWidth="730.0" style="-fx-background-color: #F0F7FF;">
+      <HBox alignment="CENTER" prefHeight="12.0" prefWidth="902.0" spacing="50.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="249.0">
-               <children>
-                  <Text fx:id="player" strokeType="OUTSIDE" strokeWidth="0.0" text="Player">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font></Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="113.0" prefWidth="200.0">
-               <children>
-                  <Text fx:id="round" strokeType="OUTSIDE" strokeWidth="0.0" text="Round:">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font></Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
-               <children>
-                  <Text fx:id="aiName" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font></Text>
-               </children>
-            </HBox>
+            <Text fx:id="playerTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Player" textAlignment="CENTER" wrappingWidth="150.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="round" strokeType="OUTSIDE" strokeWidth="0.0" text="Round:" textAlignment="CENTER" wrappingWidth="150.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="aiName" strokeType="OUTSIDE" strokeWidth="0.0" text="Bot" textAlignment="CENTER" wrappingWidth="150.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutY="140.0" prefHeight="195.0" prefWidth="902.0" style="-fx-background-color: #FEF9EC;">
+      <Text fx:id="gamestate" fill="#00afff" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" prefHeight="195.0" prefWidth="902.0" style="-fx-background-color: #FEF9EC;">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="human" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="humanImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Image/human.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="165.0" prefWidth="198.0">
@@ -61,10 +61,11 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="robot" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="robotImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Image/robot.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                </children>
             </HBox>
          </children>
@@ -75,47 +76,62 @@
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </HBox>
-      <Text fx:id="gamestate" fill="#00afff" layoutX="401.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="377.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick your choice!">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pick your choice!">
          <font>
             <Font size="20.0" />
-         </font></Text>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="577.0" layoutY="426.0" onMouseClicked="#scissor" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/scissor.png" />
-         </image>
-         <effect>
-            <DropShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="308.0" layoutX="183.0" layoutY="426.0" onMouseClicked="#rock" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/rock.png" />
-         </image>
-         <effect>
-            <DropShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="376.0" layoutY="426.0" onMouseClicked="#paper" opacity="0.75" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Image/paper.png" />
-         </image>
-         <effect>
-            <DropShadow />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
+         </font>
+      </Text>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#scissor">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/scissor.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#rock">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="308.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/rock.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#paper">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/paper.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="20.0" top="20.0" />
+   </padding>
+</VBox>
