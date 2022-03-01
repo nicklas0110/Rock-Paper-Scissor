@@ -3,6 +3,7 @@ package rps;
 //Project imports
 import rps.gui.ConsoleApp;
 import rps.gui.JavaFXApp;
+import rps.gui.controller.GameViewController;
 
 /**
  * Main class where we start
@@ -31,8 +32,8 @@ public class Main {
      */
     private static void startRPSJavaFXGame() {
         JavaFXApp.launch();
+        new GameViewController().startGame();
     }
-
     /**
      * Start a console version of the game
      */

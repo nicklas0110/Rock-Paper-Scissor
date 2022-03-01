@@ -19,7 +19,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Round:" />
+                  <Text fx:id="round" strokeType="OUTSIDE" strokeWidth="0.0" text="Round:" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
@@ -94,7 +94,7 @@
                </cursor>
             </ImageView>
          </children></HBox>
-      <Text layoutX="322.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate" />
+      <Text fx:id="gamestate" layoutX="322.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gamestate" />
       <Text layoutX="305.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick your choice!" />
    </children>
 </AnchorPane>
