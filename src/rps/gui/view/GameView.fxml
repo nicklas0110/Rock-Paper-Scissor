@@ -16,7 +16,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="249.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player">
+                  <Text fx:id="player" strokeType="OUTSIDE" strokeWidth="0.0" text="Player">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Text>

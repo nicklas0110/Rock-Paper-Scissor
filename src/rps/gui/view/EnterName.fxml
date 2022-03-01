@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.EnterNameController">
+   <children>
+      <TextField fx:id="enterName" alignment="CENTER" layoutX="50.0" layoutY="115.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter name" />
+      <Text layoutX="65.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rock! Paper! Scissors!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="110.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Game">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="openGame" layoutX="118.0" layoutY="150.0" onAction="#openGame" style="-fx-background-color: #c9c9c9;" text="Continue" />
+      <Text layoutX="81.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name to continue">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

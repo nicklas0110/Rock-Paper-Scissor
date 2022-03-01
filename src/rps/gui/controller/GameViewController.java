@@ -11,24 +11,21 @@ import javafx.scene.text.Text;
 
 import rps.bll.game.Move;
 import rps.gui.ConsoleApp;
+import rps.gui.controller.EnterNameController;
 
 import rps.bll.game.GameManager;
-import rps.bll.game.Move;
 import rps.bll.game.Result;
 import rps.bll.game.ResultType;
 import rps.bll.player.IPlayer;
 import rps.bll.player.Player;
 import rps.bll.player.PlayerType;
 
-import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
+
 
 /**
  * @author smsj
@@ -44,8 +41,11 @@ public class GameViewController implements Initializable {
     private Text round;
     @FXML
     private Text gamestate;
+    @FXML
+    private Text player;
 
     public String playerMove = "";
+
 
     ConsoleApp consoleApp = new ConsoleApp();
 
@@ -55,6 +55,12 @@ public class GameViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         aiName.setText(consoleApp.getRandomBotName());
+
+
+        if (playerName() == ""); { player.setText("Player 1"); }
+        if (playerName() != ""); { player.setText(playerName()); }
+
+
     }
 
     public void paper(MouseEvent mouseEvent) {
@@ -88,6 +94,7 @@ public class GameViewController implements Initializable {
     /**
      * Starts the game
      */
+
     public void startGame() {
 
         IPlayer human = new Player(playerName(), PlayerType.Human);
@@ -95,7 +102,8 @@ public class GameViewController implements Initializable {
 
         GameManager ge = new GameManager(human, bot);
 
-        while (true) {
+
+
             String playerMove = getPlayerMove();
 
             ge.playRound(Move.valueOf(playerMove));
@@ -103,18 +111,21 @@ public class GameViewController implements Initializable {
 
             ge.getGameState().getHistoricResults().forEach((result) -> {
                 gamestate.setText(getResultAsString(result));
+                System.out.println(getResultAsString(result));
+                gamestate.setX(-60);
+
                 round.setText(getRoundAsString(result));
+
             });
-            break;
-        }
+
+
     }
 
 
     private String playerName() {
-        String pn = "Player 1";
-        return pn;
-        //TODO
-        //getTextField
+
+        return EnterNameController.playerName;
+
     }
 
     /**
@@ -171,7 +182,6 @@ public class GameViewController implements Initializable {
     }
 
     public String getRoundAsString(Result result) {
-        String statusText = result.getType() == ResultType.Win ? "wins over " : "ties ";
 
         return "Round #" + result.getRoundNumber() + ":";
     }
