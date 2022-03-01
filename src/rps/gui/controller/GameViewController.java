@@ -8,9 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import rps.bll.game.Move;
 
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -35,22 +34,25 @@ public class GameViewController implements Initializable {
         // TODO
     }
 
-    public void paper(MouseEvent mouseEvent) throws FileNotFoundException {
+    public void paper(MouseEvent mouseEvent) {
+        Move(paper());
         //Move.Paper;
-        Image imgPaper = new Image(getClass().getResourceAsStream("src/rps/gui/view/Image/paper.png"));
-        human.setImage(imgPaper);
+        String paperIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\paper.png";
+        Image paperIMG = new Image(paperIMGFilePath);
+        human.setImage(paperIMG);
     }
 
     public void rock(MouseEvent mouseEvent) {
         //Move.Rock;
-        Image rockIMG = new Image("src/rps/gui/Image/rock.png");
+        String rockIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\rock.png";
+        Image rockIMG = new Image(rockIMGFilePath);
         human.setImage(rockIMG);
     }
 
     public void scissor(MouseEvent mouseEvent) {
         //Move.Scissor
-
-        Image scissorIMG = new Image("C:\\Users\\Nickl\\Documents\\GitHub\\Rock-Paper-Scissor\\src\\rps\\gui\\view\\Image\\scissor.png");
+        String scissorIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\scissor.png";
+        Image scissorIMG = new Image(scissorIMGFilePath);
         human.setImage(scissorIMG);
     }
 }
