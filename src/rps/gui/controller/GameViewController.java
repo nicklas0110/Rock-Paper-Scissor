@@ -113,6 +113,11 @@ public class GameViewController implements Initializable {
         ArrayList<Result> results = new ArrayList<>(ge.getGameState().getHistoricResults());
         Result result = results.get(results.size() - 1);
 
+        int[] wins = getPlayerWins(results,human);
+
+        playerPointsTxt.setText(""+wins[0]);
+        aiPointsTxt.setText(""+wins[1]);
+
         gamestate.setText(getResultAsString(result));
         round.setText(getRoundAsString(result));
         gamestate.setX(-60);
@@ -192,4 +197,24 @@ public class GameViewController implements Initializable {
     }
 
 
+    private int[] getPlayerWins(ArrayList<Result> results, IPlayer player)
+    {
+        int playerWins = 0;
+        int aiWins = 0;
+
+        for (Result r:results) {
+            if (r.getType() != ResultType.Tie)
+            {
+                if (r.getWinnerPlayer().getPlayerName() == player.getPlayerName()) {
+                    playerWins++;
+                } else {
+                    aiWins++;
+                }
+            }
+        }
+
+        int[] wins = {playerWins,aiWins};
+
+        return wins;
+    }
 }

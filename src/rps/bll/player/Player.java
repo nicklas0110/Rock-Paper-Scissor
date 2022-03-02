@@ -64,24 +64,6 @@ public class Player implements IPlayer {
 
     }
 
-    private int[] wins(ArrayList<Result> results)
-    {
-
-        int player = 0;
-        int ai = 0;
-
-        for (Result r:results) {
-            if (r.getWinnerPlayer().getPlayerName() != getPlayerName()) {
-                player++;
-            } else {
-                ai++;
-            }
-        }
-
-        int[] wins = {player,ai};
-
-        return wins;
-    }
 
     private int weightedRandomPlay(ArrayList<Result> results)
     {
