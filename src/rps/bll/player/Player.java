@@ -51,7 +51,7 @@ public class Player implements IPlayer {
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
 
 
-        //Implement better AI here...
+        //Better AI have been implemented here...
         int play = weightedRandomPlay(results);
 
         /*
