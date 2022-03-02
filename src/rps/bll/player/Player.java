@@ -54,13 +54,8 @@ public class Player implements IPlayer {
         //Implement better AI here...
         int play = weightedRandomPlay(results);
 
-        switch (play)
-        {
-            case 1: return Move.Rock;
-            case 2: return Move.Paper;
-            case 3: return Move.Scissor;
-            default: return Move.Rock;
-        }
+        return Move.values()[play];
+
     }
 
     private int weightedRandomPlay(ArrayList<Result> results)
@@ -104,15 +99,15 @@ public class Player implements IPlayer {
         int i = random.nextInt(rock+paper+scissor);
         if (i < rock)
         {
-            return 1;
+            return 0;//Rock
         }
         else if (i < rock+paper)
         {
-            return 2;
+            return 1;//Paper
         }
         else
         {
-            return 3;
+            return 2;//Scissor
         }
     }
 }
