@@ -37,6 +37,10 @@ public class GameViewController implements Initializable {
     @FXML
     public Text aiName;
     @FXML
+    public Text aiPointsTxt;
+    @FXML
+    public Text playerPointsTxt;
+    @FXML
     private ImageView humanImg;
     @FXML
     private ImageView robotImg;
@@ -48,6 +52,7 @@ public class GameViewController implements Initializable {
     private Text playerTxt;
 
     public String playerMove = "";
+
 
     private IPlayer human;
     private IPlayer bot;
