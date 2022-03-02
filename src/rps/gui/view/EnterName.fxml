@@ -14,9 +14,9 @@
 
 <AnchorPane prefHeight="464.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.EnterNameController">
    <children>
-      <ImageView fitHeight="464.0" fitWidth="811.0" layoutY="-4.0" opacity="0.07" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="127.0" fitWidth="132.0" layoutX="663.0" layoutY="331.0" opacity="0.53" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Image/backPIc.jpg" />
+            <Image url="@Image/337406460602013.gif" />
          </image>
       </ImageView>
       <TextField fx:id="enterName" alignment="CENTER" layoutX="217.0" layoutY="213.0" prefHeight="54.0" prefWidth="377.0" promptText="Enter name" style="-fx-background-color: white;" />
@@ -46,7 +46,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton fx:id="openGame" buttonType="RAISED" layoutX="322.0" layoutY="308.0" onAction="#openGame" prefHeight="47.0" prefWidth="183.0" style="-fx-background-color: #02EFFA;" text="Continue">
+      <JFXButton fx:id="openGame" buttonType="RAISED" layoutX="322.0" layoutY="307.0" onAction="#openGame" prefHeight="47.0" prefWidth="183.0" style="-fx-background-color: #FC5375;" text="Continue">
          <textFill>
             <RadialGradient centerX="0.5903083196295515" centerY="0.4318180228724624" cycleMethod="REFLECT" radius="0.3990825775566451">
                <stops>
@@ -92,6 +92,6 @@
                </stops>
             </RadialGradient>
          </ripplerFill></JFXButton>
-      <Text layoutX="338.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name to continue" />
+      <Text layoutX="336.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name to continue" />
    </children>
 </AnchorPane>
