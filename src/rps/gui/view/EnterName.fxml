@@ -2,25 +2,80 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="362.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.EnterNameController">
+<AnchorPane prefHeight="319.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.EnterNameController">
    <children>
-      <TextField fx:id="enterName" alignment="CENTER" layoutX="125.0" layoutY="150.0" prefHeight="38.0" prefWidth="268.0" promptText="Enter name" />
-      <Text layoutX="165.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rock! Paper! Scissors!">
+      <ImageView fitHeight="324.0" fitWidth="604.0" layoutX="6.0" layoutY="1.0" opacity="0.07" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/backPIc.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="enterName" alignment="CENTER" layoutX="164.0" layoutY="179.0" prefHeight="38.0" prefWidth="282.0" promptText="Enter name" style="-fx-background-color: white;" />
+      <Text layoutX="219.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rock! Paper! Scissors!">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="210.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Game">
+      <Text layoutX="264.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Game">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <JFXButton fx:id="openGame" layoutX="174.0" layoutY="216.0" onAction="#openGame" prefHeight="47.0" prefWidth="183.0" style="-fx-background-color: #c9c9c9;" text="Continue" textFill="#590808" />
-      <Text layoutX="182.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name to continue">
+      <JFXButton fx:id="openGame" buttonType="RAISED" layoutX="219.0" layoutY="243.0" onAction="#openGame" prefHeight="47.0" prefWidth="183.0" style="-fx-background-color: #02EFFA;" text="Continue">
+         <textFill>
+            <RadialGradient centerX="0.5903083196295515" centerY="0.4318180228724624" cycleMethod="REFLECT" radius="0.3990825775566451">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007680491551459294">
+                     <color>
+                        <Color red="0.9364224076271057" green="1.0" blue="0.4099999964237213" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font size="19.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5396476022997617" centerY="0.4318181745933764" cycleMethod="REFLECT" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007680491551459294">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5899999737739563" green="0.8356465101242065" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </ripplerFill></JFXButton>
+      <Text layoutX="236.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name to continue">
          <font>
             <Font size="11.0" />
          </font>
