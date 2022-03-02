@@ -42,11 +42,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="humanImg" fitHeight="205.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../Desktop/eaf789e8e5f1eafdba9ea1966a6fc7da.gif" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="humanImg" fitHeight="205.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="165.0" prefWidth="198.0">
@@ -60,11 +56,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="robotImg" fitHeight="203.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../Desktop/3E6kos.gif" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="robotImg" fitHeight="203.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </HBox>
          </children>
