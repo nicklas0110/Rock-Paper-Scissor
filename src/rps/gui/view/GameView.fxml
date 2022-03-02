@@ -12,7 +12,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
       <HBox alignment="CENTER" prefHeight="12.0" prefWidth="902.0" spacing="50.0">
@@ -43,16 +42,16 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="humanImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="humanImg" fitHeight="205.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Image/human.png" />
+                        <Image url="@../../../../../../../../../../Desktop/eaf789e8e5f1eafdba9ea1966a6fc7da.gif" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="165.0" prefWidth="198.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="125.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Image/versus.png" />
                      </image>
@@ -61,9 +60,9 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="robotImg" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="robotImg" fitHeight="203.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Image/robot.png" />
+                        <Image url="@../../../../../../../../../../Desktop/3E6kos.gif" />
                      </image>
                   </ImageView>
                </children>

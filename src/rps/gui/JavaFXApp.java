@@ -25,11 +25,11 @@ public class JavaFXApp extends Application {
         Image icon = new Image(getClass().getResourceAsStream("/rps/gui/view/Image/icon.png"));
         stage.getIcons().add(icon);
 
+
         Parent root = FXMLLoader.load(getClass().getResource("/rps/gui/view/EnterName.fxml"));
         stage.setTitle("Rock-Paper-Scissor");
         stage.setScene(new Scene(root));
         stage.show();
-
 
     }
 }
