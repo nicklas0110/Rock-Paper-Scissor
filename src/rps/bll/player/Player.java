@@ -54,6 +54,12 @@ public class Player implements IPlayer {
         //Implement better AI here...
         int play = weightedRandomPlay(results);
 
+        /*
+            Hvis play er:
+            0 = Rock,
+            1 = Paper,
+            2 = Scissor
+         */
         return Move.values()[play];
 
     }
