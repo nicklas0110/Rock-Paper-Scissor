@@ -94,7 +94,6 @@ public class GameViewController implements Initializable {
         Media media = new Media(new File(fartMP3FilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-        mediaPlayer.stop();
 
     }
 
@@ -108,7 +107,6 @@ public class GameViewController implements Initializable {
         Media media = new Media(new File(deezMP3FilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-        mediaPlayer.stop();
     }
 
     public void scissor(ActionEvent actionEvent) {
@@ -121,7 +119,6 @@ public class GameViewController implements Initializable {
         Media media = new Media(new File(bruhMP3FilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-        mediaPlayer.stop();
     }
 
 
