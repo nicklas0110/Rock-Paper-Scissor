@@ -7,12 +7,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 
 import rps.bll.game.Move;
-import rps.gui.ConsoleApp;
-import rps.gui.controller.EnterNameController;
 
 import rps.bll.game.GameManager;
 import rps.bll.game.Result;
@@ -21,13 +20,15 @@ import rps.bll.player.IPlayer;
 import rps.bll.player.Player;
 import rps.bll.player.PlayerType;
 
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-import static java.lang.Integer.valueOf;
 
 
 /**
@@ -52,6 +53,7 @@ public class GameViewController implements Initializable {
     private Text playerTxt;
 
     public String playerMove = "";
+    private MediaPlayer mediaPlayer;
 
 
     private IPlayer human;
@@ -60,8 +62,13 @@ public class GameViewController implements Initializable {
     private GameManager ge;
 
     private String paperIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\paper.png";
+    private String fart = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\fart.mp3";
+
     private String rockIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\rock.png";
+    private String deez = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\Deez-Nuts.mp3";
+
     private String scissorIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\scissor.png";
+    private String bruh = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\BRUH.mp3";
 
     /**
      * Initializes the controller class.
@@ -77,20 +84,31 @@ public class GameViewController implements Initializable {
         ge = new GameManager(human, bot);
     }
 
-    public void paper(ActionEvent actionEvent) {
+    public void paper(ActionEvent actionEvent) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         playerMove = "Paper";
         playRound();
 
         Image paperIMG = new Image(paperIMGFilePath);
         humanImg.setImage(paperIMG);
+
+        Media media = new Media(new File(fart).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
+        mediaPlayer.stop();
+
     }
 
-    public void rock(ActionEvent actionEvent) {
+    public void rock(ActionEvent actionEvent) throws MalformedURLException {
         playerMove = "Rock";
         playRound();
 
         Image rockIMG = new Image(rockIMGFilePath);
         humanImg.setImage(rockIMG);
+
+        Media media = new Media(new File(deez).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
+        mediaPlayer.stop();
     }
 
     public void scissor(ActionEvent actionEvent) {
@@ -99,6 +117,11 @@ public class GameViewController implements Initializable {
 
         Image scissorIMG = new Image(scissorIMGFilePath);
         humanImg.setImage(scissorIMG);
+
+        Media media = new Media(new File(bruh).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
+        mediaPlayer.stop();
     }
 
 
