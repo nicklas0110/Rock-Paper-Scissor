@@ -62,13 +62,13 @@ public class GameViewController implements Initializable {
     private GameManager ge;
 
     private String paperIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\paper.png";
-    private String fart = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\fart.mp3";
+    private String fartMP3FilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\fart.mp3";
 
     private String rockIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\rock.png";
-    private String deez = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\Deez-Nuts.mp3";
+    private String deezMP3FilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\Deez-Nuts.mp3";
 
     private String scissorIMGFilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Image\\scissor.png";
-    private String bruh = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\BRUH.mp3";
+    private String bruhMP3FilePath = System.getProperty("user.dir") + "\\src\\rps\\gui\\view\\Sound\\BRUH.mp3";
 
     /**
      * Initializes the controller class.
@@ -91,7 +91,7 @@ public class GameViewController implements Initializable {
         Image paperIMG = new Image(paperIMGFilePath);
         humanImg.setImage(paperIMG);
 
-        Media media = new Media(new File(fart).toURI().toString());
+        Media media = new Media(new File(fartMP3FilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
         mediaPlayer.stop();
@@ -105,7 +105,7 @@ public class GameViewController implements Initializable {
         Image rockIMG = new Image(rockIMGFilePath);
         humanImg.setImage(rockIMG);
 
-        Media media = new Media(new File(deez).toURI().toString());
+        Media media = new Media(new File(deezMP3FilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
         mediaPlayer.stop();
@@ -118,7 +118,7 @@ public class GameViewController implements Initializable {
         Image scissorIMG = new Image(scissorIMGFilePath);
         humanImg.setImage(scissorIMG);
 
-        Media media = new Media(new File(bruh).toURI().toString());
+        Media media = new Media(new File(bruhMP3FilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
         mediaPlayer.stop();
